@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets.user"
+    },
+    "storage2": {
+      "ignored": "true",
+      "type": "storage",
+      "connectionId": "AzureStorage:ConnectionString"
+    },
+    "storage1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('serviceConnectorResourceGroupName')]/providers/Microsoft.ServiceLinker/locations/westeurope/connectors/AzureStorageConnectionString_179EBB764A, /subscriptions/c7f04049-2cf5-48d5-85ec-2a9213ab2595/resourceGroups/hack-it-bot-rg/providers/Microsoft.ServiceLinker/locations/westeurope/connectors/AzureStorageConnectionString_FA4EB2A5E2",
+      "secretStore": "LocalSecretsFile",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/assistantstoragevb",
+      "type": "storage.azure",
+      "connectionId": "AzureStorage:ConnectionString"
+    },
+    "appInsights1": {
+      "secretStore": "LocalSecretsFile",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/microsoft.insights/components/simple-llm-agents-app",
+      "type": "appInsights.azure",
+      "connectionId": "APPLICATIONINSIGHTS_CONNECTION_STRING"
+    }
+  }
+}
