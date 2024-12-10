@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <NoWarn>OPENAI001</NoWarn>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
+        <PackageReference Include="Autofac" Version="8.1.1" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
+        <PackageReference Include="Azure.Storage.Blobs" Version="12.23.0" />
+        <PackageReference Include="MediatR" Version="12.4.1" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.12.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="MimeTypeMapOfficial" Version="1.0.17" />
+        <PackageReference Include="Nabs.Aspire.ServiceDefaults" Version="9.0.89" />
+        <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.9.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.9.0" />
+        <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.18.2" />
+        <PackageReference Include="System.Linq.Async" Version="6.0.1" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\AssistantManage.Service\AssistantManage.Service.csproj" />
+      <ProjectReference Include="..\Functions\Assistant.Fnctions.CallSimpleLlmAgent\CallSimpleLlmAgent.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Update="Data\Models\VectoredFileEntity.EntityConfig.cs">
+            <DependentUpon>VectoredFileEntity.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Data\Models\AssistantEntity.EntityConfig.cs">
+            <DependentUpon>AssistantEntity.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Data\Models\ConversationEntity.EntityConfig.cs">
+            <DependentUpon>ConversationEntity.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Data\Models\MessageEntity.EntityConfig.cs">
+            <DependentUpon>MessageEntity.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Data\Models\VectorStoreEntity.EntityConfig.cs">
+            <DependentUpon>VectorStoreEntity.cs</DependentUpon>
+        </Compile>
+    </ItemGroup>
+</Project>
