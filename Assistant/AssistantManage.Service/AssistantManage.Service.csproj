@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<NoWarn>OPENAI001</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Azure.AI.OpenAI" Version="2.1.0-beta.2" />
+		<PackageReference Include="Azure.Storage.Blobs" Version="12.23.0" />
+		<PackageReference Include="Microsoft.Extensions.AI" Version="9.0.1-preview.1.24570.5" />
+		<PackageReference Include="NJsonSchema" Version="11.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Assistant.Functions.Abstractions\Assistant.Functions.Abstractions.csproj" OutputItemType="Analyzer" />
+		<ProjectReference Include="..\DistributedLock\System.Threading.DistributedLock.csproj" />
+		<ProjectReference Include="..\Functions\Assistant.Fnctions.CallSimpleLlmAgent\CallSimpleLlmAgent.csproj" />
+		<ProjectReference Include="..\Functions\CallRestApiFunction\HttpClientFunction.csproj" />
+		<ProjectReference Include="..\Functions\GetAvalibleApiFunction\Assistant.Fnctions.GetAvailableApiListFunction.csproj" />
+		<ProjectReference Include="..\Functions\GetTopic\GetTopic.csproj" />
+		<ProjectReference Include="..\Functions\ImageGenerator\Assistant.Functions.ImageGenerator\ImageGenerator.csproj" />
+	</ItemGroup>
+
+</Project>
